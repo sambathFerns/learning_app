@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+.loggin{
+    margin: 0;
+    padding: 0;
+    background-image: url('../../Assets/bg.png');
+}
+.log_area{
+    padding: 50px 0;
+}
+.log_title{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 50px;
+    color: #403C39;
+    padding-top: 50px;
+}
+.log_title > span{
+    color: #0E6799;
+}
+.log_area > p{
+    font-size: 18px;
+}
+.form-area{
+    width: 400px;
+    height: auto;
+    margin: 50px 0;
+    padding: 10px;
+}
+.form-group{
+    margin: 20px 0;
+}
+.form-group > label{
+    font-weight: 600;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #0E6799;
+  box-shadow: none;
+  outline: 0 none;
+}
+.form-control.red{
+    border-color: rgb(255, 0, 0);
+}
+.login-btn{
+    padding: 5px 25px;
+    border: solid 1px #0E6799;
+    background-color: transparent;
+    border-radius: 10px;
+    color: #0E6799;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+.login-btn:hover{
+    background-color: #0E6799;
+    color: #fff;
+}
+.signin{
+    padding: 20px 0;
+    color: #403C39;
+}
+.video_layer{
+    height:100vh; 
+    display: grid;
+    width: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+.video_layer > video{
+    height: 100%;
+    max-width: 100%;
+    object-fit: fill;
+}
+.bg-study{
+    height: 280px;
+    width: 350px;
+    position: absolute;
+    left:20px;
+    bottom: 0;
+}
+@media screen and (max-width:600px) {
+    .vid{
+        display: none;
+    }
+}
+@media screen and (max-width:991px){
+    .vid{
+        display: none;
+    }
+}

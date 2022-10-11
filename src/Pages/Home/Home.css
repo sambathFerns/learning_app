@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+.pro_view {
+  padding: 40px 0;
+}
+.pro-card {
+  position: relative;
+  height: 450px;
+  border-radius: 10px;
+  border: 1px solid #d6f0ff;
+  background-color: #f8f2f2;
+  box-shadow: 0 5px 15px #b4b4b4;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+.pic {
+  width: 100%;
+  height: 200px;
+}
+.profPic {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #d6f0ff;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.profPic > img {
+  max-width: 100%;
+}
+.pro-card > h3 {
+  text-align: center;
+  font-size: 40px;
+  user-select: none;
+}
+.pro-card > p {
+  font-size: 20px;
+  text-align: center;
+  user-select: none;
+}
+.pro-card > h4 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+  user-select: none;
+}
+.stId {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: solid 1px #9cbed2;
+  transition: all 0.2s ease-in-out;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.stId:hover {
+  background-color: #0e6799;
+}
+.stId > p {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #0e6799;
+  user-select: none;
+}
+.stId:hover > p {
+  color: #fff;
+}
+.stId p span {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+.class_banner{
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.class_banner > img{
+    max-width: 100%;
+}
+@media screen and (max-width:991px){
+    .pro-card > h3{
+        font-size: 27px;
+    }
+    .pro-card > p{
+        font-size: 13px;
+    }
+    .stId{
+        width: 180px;
+        border-radius: 6px;
+    }
+}
+@media screen and (max-width:768px) {
+    .pro-card{
+        height: 380px;
+    }
+    .pic{
+        height: 100px;
+    }
+    .profPic{
+        width: 100px;
+        height: 100px;
+    }
+    .pro-card > h3{
+        font-size: 20px;
+    }
+    .pro-card > p{
+        font-size: 13px;
+    }
+    .stId{
+        width: 100px;
+        height: 60px;
+        border-radius: 6px;
+    }
+    .pro-cont{
+        margin-top: 30px;
+    }
+}
