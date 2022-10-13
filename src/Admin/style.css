@@ -1,0 +1,16 @@
+.streamManager{
+    width : 500px;
+    height :auto;
+    padding: 10px 20%;
+}
+.Stream_btn{
+    padding: 10px 25px;
+    background-color: #00aa88;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+.Stream_btn:hover{
+    background-color: #029678;
+}

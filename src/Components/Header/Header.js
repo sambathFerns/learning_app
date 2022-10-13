@@ -6,6 +6,7 @@ import Hamburger from "hamburger-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./Header.css";
+import { Link } from "@mui/material";
 
 function Header() {
   const navRef = useRef();
@@ -23,8 +24,11 @@ function Header() {
         <Container>
           <div className="navbar-area">
             <div className="navbar-logo">
-              <h3><a href="/">SCOTLAND UNIVERCITY</a></h3>
+              <a href="/classes">
+                <img src={require("../../Assets/logo_main.png")} />
+              </a>
             </div>
+
             <nav
               className={click ? "navbar active" : "navbar"}
               onClick={handleClick}
@@ -34,6 +38,9 @@ function Header() {
               </a>
               <a className="nav-item" href="#">
                 Profile
+              </a>
+              <a className="nav-item" href="/admin">
+                Admin Panel
               </a>
             </nav>
             <div id="responsive">

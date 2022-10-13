@@ -12,7 +12,7 @@
     font-weight: 800;
     font-size: 50px;
     color: #403C39;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .log_title > span{
     color: #0E6799;
@@ -23,7 +23,7 @@
 .form-area{
     width: 400px;
     height: auto;
-    margin: 50px 0;
+    margin: 20px 0;
     padding: 10px;
 }
 .form-group{
@@ -59,16 +59,13 @@ input[type="color"]:focus,
 .login-btn{
     padding: 5px 25px;
     border: solid 1px #0E6799;
-    background-color: transparent;
+    background-color: #0E6799;
     border-radius: 10px;
-    color: #0E6799;
+    color: #fff;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
 }
-.login-btn:hover{
-    background-color: #0E6799;
-    color: #fff;
-}
+
 .signin{
     padding: 20px 0;
     color: #403C39;
@@ -91,6 +88,15 @@ input[type="color"]:focus,
     position: absolute;
     left:20px;
     bottom: 0;
+}
+.logo_area{
+    width: 180px;
+    height: 150px;
+    background-color: transparent;
+    overflow: hidden;
+}
+.logo_area > img{
+    max-width: 100%;
 }
 @media screen and (max-width:600px) {
     .vid{

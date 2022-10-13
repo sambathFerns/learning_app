@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -14,7 +14,7 @@
   border-radius: 10px;
   border: 1px solid #d6f0ff;
   background-color: #f8f2f2;
-  box-shadow: 0 5px 15px #b4b4b4;
+  box-shadow: 0 0 10px #b4b4b4;
   padding: 30px 20px;
   overflow: hidden;
 }
@@ -46,7 +46,7 @@
   user-select: none;
 }
 .pro-card > h4 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   text-align: center;
   font-size: 18px;
@@ -58,7 +58,8 @@
   width: 100%;
   height: 40px;
   padding: 5px;
-  border: solid 1px #9cbed2;
+  border-top: solid 1px #9cbed2;
+  border-bottom: solid 1px #9cbed2;
   transition: all 0.2s ease-in-out;
   left: 50%;
   transform: translateX(-50%);
@@ -68,8 +69,7 @@
 }
 .stId > p {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-
+  font-family: 'Poppins', sans-serif;
   color: #0e6799;
   user-select: none;
 }
@@ -78,53 +78,133 @@
 }
 .stId p span {
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
-.class_banner{
-    width: 100%;
-    height: 330px;
-    overflow: hidden;
-    border-radius: 20px;
+.sId{
+  font-family: 'Poppins', sans-serif;
+  color: #0e6799;
 }
-.class_banner > img{
-    max-width: 100%;
+.sId span{
+  font-family: 'Poppins', sans-serif;
+  color: #0e6799;
+  font-weight: 600;
 }
-@media screen and (max-width:991px){
-    .pro-card > h3{
-        font-size: 27px;
-    }
-    .pro-card > p{
-        font-size: 13px;
-    }
-    .stId{
-        width: 180px;
-        border-radius: 6px;
-    }
+.class_banner {
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  border-radius: 20px;
 }
-@media screen and (max-width:768px) {
-    .pro-card{
-        height: 380px;
-    }
-    .pic{
-        height: 100px;
-    }
-    .profPic{
-        width: 100px;
-        height: 100px;
-    }
-    .pro-card > h3{
-        font-size: 20px;
-    }
-    .pro-card > p{
-        font-size: 13px;
-    }
-    .stId{
-        width: 100px;
-        height: 60px;
-        border-radius: 6px;
-    }
-    .pro-cont{
-        margin-top: 30px;
-    }
+.class_banner > img {
+  max-width: 100%;
+}
+.live_card, .live_card2 {
+  height: 200px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #b4b4b4;
+  padding: 10px;
+}
+.live_img {
+  width: 100%;
+  height: 150px;
+  background-color: #b4b4b4;
+  border-radius: 10px;
+  margin: 15px 0;
+  position: relative;
+}
+.live_card::before {
+  position: absolute;
+  content: "Upcoming";
+  width: 100px;
+  height: 40px;
+  background-color: #990e0e;
+  z-index: 9;
+  top: 40px;
+  left: 0;
+  border-radius: 0 10px 10px 0;
+  padding: 7px;
+  color: #fff;
+}
+.live_card2::before{
+  position: absolute;
+  content: "Live";
+  width: 80px;
+  height: 40px;
+  background-color: #008000;
+  z-index: 9;
+  top: 40px;
+  left: 0;
+  border-radius: 0 10px 10px 0;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 700;
+}
+.card-cont {
+  padding: 10px;
+}
+.card-cont > h3{
+  color: #000;
+  font-weight: 600;
+}
+.card-cont > p {
+  color: #909090;
+  font-size: 15px;
+}
+#card-date {
+  color: #000;
+}
+.card_link{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  text-decoration: none;
+  color:  #F2690D;
+  font-size: 20px;
+}
+.card_link:hover{
+  color: #F2690D;
+}
+@media screen and (max-width: 991px) {
+  .pro-card > h3 {
+    font-size: 27px;
+  }
+  .pro-card > p {
+    font-size: 13px;
+  }
+  .stId {
+    width: 180px;
+    border-radius: 6px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pro-card {
+    height: 380px;
+  }
+  .pic {
+    height: 100px;
+  }
+  .profPic {
+    width: 100px;
+    height: 100px;
+  }
+  .pro-card > h3 {
+    font-size: 20px;
+  }
+  .pro-card > p {
+    font-size: 13px;
+  }
+  .stId {
+    width: 100px;
+    height: 60px;
+    border-radius: 6px;
+  }
+  .pro-cont {
+    margin-top: 30px;
+  }
+}
+.foo{
+  position: relative;
+  margin-top: 70px;
 }

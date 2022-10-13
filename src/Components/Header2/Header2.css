@@ -12,17 +12,22 @@ header{
 }
 .navbar-area{
     display: flex;
-    padding: 1.2rem;
+    padding:0.5rem;
 }
 .navbar-logo{
     height: 50px;
-    width: 250px;
+    width: 350px;
     background-color:transparent;
     user-select: none;
     overflow: hidden;
 }
-.navbar-logo a > img{
+.navbar-logo > img{
     max-width: 100%;
+}
+.navbar-logo > span{
+    font-weight: 700;
+    padding-top: 15px;
+    color: #fff;
 }
 .navbar-logo h3 a{
     text-decoration: none;
@@ -67,7 +72,6 @@ header .nav-btn{
 .navbar{
     position: absolute;
     right: 20%;
-    padding: 10px 0;
 }
 #responsive{
     display: none;

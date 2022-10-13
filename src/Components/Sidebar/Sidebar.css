@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.sidebar {
+  /* width: 250px; */
+  height: 100%;
+  position: fixed;
+  left: 0;
+  background-color: #252525;
+  padding: 20px;
+  transition: all 0.5s;
+}
+nav {
+  float: left;
+}
+.nav-menu {
+  list-style: none;
+  color: #fff;
+  padding-left: 0;
+  padding-top: 40px;
+}
+.nav-items {
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.nav-items > a {
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0;
+  overflow: hidden;
+  margin-left: 0;
+  transition: all 0.2s ease-in-out;
+}
+.nav-items a > p {
+  padding: 4px;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+.nav-items a > i {
+  padding-right: 25px;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.nav-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  padding: 2px 7px;
+  cursor: pointer;
+}
+.nav-btn i {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
