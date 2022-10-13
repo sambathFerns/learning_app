@@ -52,7 +52,7 @@ function Login() {
         success: function (data, textStatus, jQxhr) {
           if (data && data.accessToken) {
             localStorage.setItem("loginResponse", JSON.stringify(data));
-            navigate("/");
+            navigate("/classes");
           }
         },
         error: function (jqXhr, textStatus, errorThrown) {
