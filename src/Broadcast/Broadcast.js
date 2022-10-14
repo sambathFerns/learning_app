@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import CamMicSelectionWidget from "./settings";
-import IVSBroadcastClient, {
-  Errors,
-  BASIC_LANDSCAPE,
-} from "amazon-ivs-web-broadcast";
 import * as Fa from "react-icons/fa";
 import * as Bs from "react-icons/bs";
 import * as Md from "react-icons/md";
@@ -33,8 +29,8 @@ function Broadcast(props) {
   // Set initial config for our broadcast
   const config = {
     ingestEndpoint: "62417c80f148.global-contribute.live-video.net",
-    streamConfig: IVSBroadcastClient.BASIC_LANDSCAPE,
-    logLevel: IVSBroadcastClient.LOG_LEVEL.DEBUG,
+    streamConfig: window.IVSBroadcastClient.BASIC_LANDSCAPE,
+    logLevel: window.IVSBroadcastClient.LOG_LEVEL.DEBUG,
   };
   const camMicChanged = async (deviceData) => {
     if (deviceData.video) {
@@ -193,8 +189,8 @@ function Broadcast(props) {
   // Helper to create an instance of the AmazonIVSBroadcastClient
   async function createClient() {
     await handlePermissions();
-    window.broadcastClient = IVSBroadcastClient.create({
-      streamConfig: IVSBroadcastClient.BASIC_LANDSCAPE,
+    window.broadcastClient = window.IVSBroadcastClient.create({
+      streamConfig: window.IVSBroadcastClient.BASIC_LANDSCAPE,
     });
 
     await handleVideoDeviceSelect_IVSClient(videoDeviceId);
