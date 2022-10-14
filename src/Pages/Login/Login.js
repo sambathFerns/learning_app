@@ -5,6 +5,8 @@ import { endpoints } from "../../endpoints/endpoints";
 import "./Login.css";
 import $ from "jquery";
 import BeatLoader from "react-spinners/BeatLoader";
+import Lottie from "lottie-react";
+import LottieAnime from "../../Assets/90714-online-learning.json";
 
 function Login() {
   const navigate = useNavigate();
@@ -166,12 +168,7 @@ function Login() {
             </div>
             <div className="col-lg-6 col-md-6 vid">
               <div className="video_layer">
-                <video
-                  src={require("../../Assets/production ID_5192067.mp4")}
-                  autoPlay="autoplay"
-                  loop="true"
-                  muted
-                ></video>
+              <Lottie className="lottie" animationData={LottieAnime}></Lottie>
               </div>
             </div>
           </div>

@@ -108,7 +108,7 @@ const StreamPage = ({ onStartStream, onStreamStopped }) => {
                 <Form.Label>Description</Form.Label>
                 <Form.Control
                   type="text"
-                  className="form-control text-grey-900 font-xss ls-3 text-white"
+                  className="form-control text-grey-900 font-xss ls-3"
                   placeholder="Description"
                   onChange={(e) => setField("description", e.target.value)}
                   isInvalid={!!errors.description}

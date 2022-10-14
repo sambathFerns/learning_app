@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .loggin{
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@
     font-weight: 800;
     font-size: 50px;
     color: #403C39;
-    padding-top: 20px;
 }
 .log_title > span{
     color: #0E6799;
@@ -23,8 +22,6 @@
 .form-area{
     width: 400px;
     height: auto;
-    margin: 20px 0;
-    padding: 10px;
 }
 .form-group{
     margin: 20px 0;
@@ -53,6 +50,9 @@ input[type="color"]:focus,
   box-shadow: none;
   outline: 0 none;
 }
+.form-control{
+    font-family: 'Poppins', sans-serif !important;
+}
 .form-control.red{
     border-color: rgb(255, 0, 0);
 }
@@ -77,7 +77,7 @@ input[type="color"]:focus,
     background-color: transparent;
     overflow: hidden;
 }
-.video_layer > video{
+.video_layer > svg{
     height: 100%;
     max-width: 100%;
     object-fit: fill;
