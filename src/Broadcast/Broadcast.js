@@ -19,7 +19,9 @@ function Broadcast(props) {
   const [audioDeviceId, setAudioDeviceId] = useState(null);
   const [isAudioMute, setIsAudioMute] = useState(false);
   const [isVideoMute, setIsVideoMute] = useState(false);
+
   const [isStreaming, setIsStreaming] = useState(false);
+
   const canvasRef = useRef();
 
   useEffect(() => {
@@ -57,8 +59,6 @@ function Broadcast(props) {
       for (const track of stream.getTracks()) {
         track.stop();
       }
-
-      console.log("Stream", stream);
 
       permissions = { video: true, audio: true };
     } catch (err) {
@@ -188,7 +188,6 @@ function Broadcast(props) {
 
   // Helper to create an instance of the AmazonIVSBroadcastClient
   async function createClient() {
-    await handlePermissions();
     window.broadcastClient = window.IVSBroadcastClient.create({
       streamConfig: window.IVSBroadcastClient.BASIC_LANDSCAPE,
     });
@@ -201,9 +200,12 @@ function Broadcast(props) {
 
   async function handleVideoDeviceSelect_IVSClient(vId) {
     let permission = await checkPermission();
-
-    if (!permission.video) return;
-
+    if (!permission.video) {
+      const image = new Image();
+      image.src = noCameraImage;
+      window.broadcastClient.addImageSource(image, "no-camera", { index: 0 });
+      return;
+    }
     if (
       window.broadcastClient &&
       window.broadcastClient.getVideoInputDevice("camera1")
@@ -218,6 +220,13 @@ function Broadcast(props) {
     const devices = await navigator.mediaDevices.enumerateDevices();
 
     window.videoDevices = devices.filter((d) => d.kind === "videoinput");
+
+    if (window.videoDevices && window.videoDevices.length == 0) {
+      const image = new Image();
+      image.src = noCameraImage;
+      window.broadcastClient.addImageSource(image, "no-camera", { index: 0 });
+      return;
+    }
 
     let selectedDeviceId = vId ? vId : window.videoDevices[0].deviceId;
     setVideoDeviceId(selectedDeviceId);
@@ -250,9 +259,7 @@ function Broadcast(props) {
 
   async function handleAudioDeviceSelect_IVSClient(deviceId) {
     let permission = await checkPermission();
-
     if (!permission.audio) return;
-
     const id = "microphone";
     if (
       window.broadcastClient &&
@@ -275,24 +282,12 @@ function Broadcast(props) {
     window.broadcastClient.addAudioInputDevice(window.audioStream, id);
   }
 
-  // async function addEventIvsEventListener() {
-  //   window.broadcastChannel &&
-  //     window.broadcastClient.on(
-  //       IVSBroadcastClient.BroadcastClientEvents.ACTIVE_STATE_CHANGE,
-  //       (active) => onActiveStateChange(active)
-  //     );
-  // }
-
-  // Handle the enabling/disabling of buttons
-  const onActiveStateChange = (active) => setIsStreaming(active);
-
   async function startCapture() {
     try {
       if (
         window.broadcastClient &&
         window.broadcastClient.getVideoInputDevice("camera1")
       ) {
-        console.info(window.broadcastClient.getVideoInputDevice("camera1"));
         window.broadcastClient.removeVideoInputDevice("camera1");
       }
       let constraints1 = {
@@ -311,12 +306,6 @@ function Broadcast(props) {
       window.videoStream = await navigator.mediaDevices.getDisplayMedia(
         constraints1
       );
-
-      window.microphoneStream = await navigator.mediaDevices.getUserMedia({
-        audio: { deviceId: window.audioDevices[0].deviceId },
-      });
-
-      console.dir("Audio", window.microphoneStream);
       setVideo(window.videoStream);
       if (window.broadcastClient) {
         window.broadcastClient.addVideoInputDevice(
@@ -330,7 +319,6 @@ function Broadcast(props) {
           .getVideoTracks()[0]
           .addEventListener("ended", async () => {
             await handleVideoDeviceSelect_IVSClient(videoDeviceId);
-            await handleAudioDeviceSelect_IVSClient(audioDeviceId);
           });
       }
 
@@ -351,9 +339,7 @@ function Broadcast(props) {
 
   async function updateAudio(status) {
     let permission = await checkPermission();
-
     if (!permission.audio) return;
-
     if (window.audioStream) {
       if (status) {
         window.audioStream.getAudioTracks()[0].enabled = false;
@@ -368,7 +354,6 @@ function Broadcast(props) {
 
   async function updateVideo(hide) {
     let permission = await checkPermission();
-
     if (!permission.video) return;
 
     console.log(videoDeviceId);
