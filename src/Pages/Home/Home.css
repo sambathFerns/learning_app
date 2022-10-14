@@ -33,7 +33,8 @@
   transform: translateX(-50%);
 }
 .profPic > img {
-  max-width: 100%;
+  max-width: 150%;
+  object-fit: contain;
 }
 .pro-card > h3 {
   text-align: center;

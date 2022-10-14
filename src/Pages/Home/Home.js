@@ -4,12 +4,10 @@ import * as Fa from "react-icons/fa";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 
-
 import "./Home.css";
 import { Link } from "react-router-dom";
 
 function Home() {
- 
   return (
     <>
       <Header />
@@ -21,7 +19,7 @@ function Home() {
                 <div className="card pro-card">
                   <div className="pic">
                     <div className="profPic">
-                      <img src={require("../../Assets/avatar1.png")} />
+                      <img src={require("../../Assets/profile.jpg")} />
                     </div>
                   </div>
                   <h3>Edward Stern</h3>
@@ -61,26 +59,8 @@ function Home() {
                   </div>
                   <div className="col-6 card-cont">
                     <h3>CLASS NAME</h3>
-                    <p className="sId">Session Id <span>#458458</span></p>
-                    <p id="card-date">Date:</p>
-                    <Link className="card_link" to="/live">
-                      View <Fa.FaArrowRight />
-                    </Link>
-                  </div>
-                </Row>
-              </div>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <div className="card live_card">
-                <Row>
-                  <div className="col-6">
-                    <div className="live_img"></div>
-                  </div>
-                  <div className="col-6 card-cont">
-                    <h3>CLASS NAME</h3>
-                    <p>
-                      The foundation of the world's future with the best
-                      education from the best lecturers
+                    <p className="sId">
+                      Session Id <span>#458458</span>
                     </p>
                     <p id="card-date">Date:</p>
                     <Link className="card_link" to="/live">
@@ -98,9 +78,27 @@ function Home() {
                   </div>
                   <div className="col-6 card-cont">
                     <h3>CLASS NAME</h3>
-                    <p>
-                      The foundation of the world's future with the best
-                      education from the best lecturers
+                    <p className="sId">
+                      Session Id <span>#458458</span>
+                    </p>
+                    <p id="card-date">Date:</p>
+                    <Link className="card_link" to="/live">
+                      View <Fa.FaArrowRight />
+                    </Link>
+                  </div>
+                </Row>
+              </div>
+            </div>
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <div className="card live_card">
+                <Row>
+                  <div className="col-6">
+                    <div className="live_img"></div>
+                  </div>
+                  <div className="col-6 card-cont">
+                    <h3>CLASS NAME</h3>
+                    <p className="sId">
+                      Session Id <span>#458458</span>
                     </p>
                     <p id="card-date">Date:</p>
                     <Link className="card_link" to="/live">
@@ -113,9 +111,9 @@ function Home() {
           </Row>
         </Container>
       </section>
-     <div className="foo">
-     <Footer />
-     </div>
+      <div className="foo">
+        <Footer />
+      </div>
     </>
   );
 }
