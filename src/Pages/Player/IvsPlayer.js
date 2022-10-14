@@ -18,7 +18,6 @@ const IVSPlayer = (props) => {
   const playbackUrl =
     "https://62417c80f148.ap-south-1.playback.live-video.net/api/video/v1/ap-south-1.300996695197.channel.B0KlX9sLPQ0A.m3u8";
 
-
   const channelArn = "arn:aws:ivs:ap-south-1:300996695197:channel/B0KlX9sLPQ0A";
 
   let options = {
@@ -28,7 +27,7 @@ const IVSPlayer = (props) => {
     responsive: true,
     controls: true,
     fill: true,
-    loop: true,
+    loop: false,
     sources: [
       {
         src: playbackUrl,
@@ -91,6 +90,11 @@ const IVSPlayer = (props) => {
     console.log(playerState);
     player.getIVSPlayer().addEventListener(playerState.ERROR, () => {
       console.log("PLAYER HAS ERROR !!");
+    });
+    player.getIVSPlayer().addEventListener(playerState.ENDED, () => {
+      player.reset();
+      
+      return;
     });
   };
 
